@@ -7,8 +7,8 @@ from dotenv import load_dotenv
 # os.environ['http_proxy']='http://127.0.0.1:7890'
 # # os.environ['al1_proxy']='socks5://127.0.0.1:7890'
 
-#配置USER_AGENT
-# os.environ['USER_AGENT'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+# 配置USER_AGENT
+os.environ['USER_AGENT'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
 
 #配置api_key
 load_dotenv()
