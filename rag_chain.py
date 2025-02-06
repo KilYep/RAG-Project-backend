@@ -2,13 +2,13 @@
 import os
 from dotenv import load_dotenv
 
-#配置notebook走代理
-os.environ['https_proxy']='http://127.0.0.1:7890'
-os.environ['http_proxy']='http://127.0.0.1:7890'
-# os.environ['al1_proxy']='socks5://127.0.0.1:7890'
+# #配置notebook走代理
+# os.environ['https_proxy']='http://127.0.0.1:7890'
+# os.environ['http_proxy']='http://127.0.0.1:7890'
+# # os.environ['al1_proxy']='socks5://127.0.0.1:7890'
 
 #配置USER_AGENT
-os.environ['USER_AGENT'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+# os.environ['USER_AGENT'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
 
 #配置api_key
 load_dotenv()
@@ -40,19 +40,12 @@ from langchain_community.document_loaders.notion import NotionDirectoryLoader
 from langchain_core.globals import set_debug  
 
 
-loader = ObsidianLoader(r"D:\Obsidian Vault")
-docs = loader.load()
+# loader = ObsidianLoader(r"D:\Obsidian Vault")
+# docs = loader.load()
 
-text_splitter = RecursiveCharacterTextSplitter()
-splitted_docs = text_splitter.split_documents(docs)
+# text_splitter = RecursiveCharacterTextSplitter()
+# splitted_docs = text_splitter.split_documents(docs)
 
-# vectordb = Chroma.from_documents(documents=splitted_docs,
-#                                     #  embedding=HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
-#                                  embedding=HuggingFaceEmbeddings(model_name="BAAI/bge-small-zh"),
-#                                 #  persist_directory='./chroma_db'
-#                                 )
-# vectordb = Chroma(persist_directory='./chroma_db',
-#        embedding_function=HuggingFaceEmbeddings(model_name="BAAI/bge-small-zh")
 # )
 persist_directory = './chroma_db'
 if os.path.exists(persist_directory) and os.listdir(persist_directory):
